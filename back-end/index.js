@@ -8,7 +8,6 @@ const PORT = 8080;
 const app = express();
 
 async function init() {
-    app.use(cors());
     // connect to database
     try {
         await sequelize.authenticate();
@@ -32,6 +31,7 @@ async function init() {
         text: "And here's another!"
     })
 
+    app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
 
