@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./sequelize');
+const cors = require('cors');
 
 const PORT = 8080;
 
@@ -23,12 +24,14 @@ async function init() {
         description: 'Hello world!'
     });
     await testBug.createComment({
-        text: "Here's one comment."
+        text: "Here's one comment.",
+        isSolution: 1
     });
     await testBug.createComment({
         text: "And here's another!"
     })
 
+    app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
 
