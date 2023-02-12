@@ -1,0 +1,30 @@
+Project Name,,Aardvark,,,Date,,4-Feb-23,,Project Manager,,Dallan Adamson,
+Project Summary (including redirection),,,,,,Key Tasks,,,Progress,Status,,Finish
+Aardvark is a web application that is designed to be used by companies as an internal type of stack overflow. Users will be able to post their error messages and solutions to problems and then future employees experiencing the same issues will be able to look up those same problems and solutions. ,,,,,,Create Requirements Doc,,,100%,Complete,,7-Feb-23
+,,,,,,Decide Leadership help roles,,,100%,Complete,,07-Feb-23
+,,,,,,Research authentication for the future,,,25%,In progress,,02-Feb-23
+,,,,,,Continue Learning Front End Framework,,,50%,In progress,,
+,,,,,,,,,,Future Task,,
+,,,,,,,,,,Future Task,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Tasks Completed,,,,,Tasks Delayed,,,,Tasks Planned,,,
+"* Completed Requirement Doc
+* Decided where leadership roles should help",,,,,Learning Front end framework,,,,* Plan specific tasks for each week for each team to better track development,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Team Members -- Billable Hours,,,,,Key Project Risks and Issues,,,,,,,
+Name,,Role/Task,,Hours,Type,Risks or Issue Description,,,,,,
+Dallan Adamson,,Project Manager,,5,Risk,"Getting ahead in some areas of development compared to others
+",,,,,,
+Colby Lyman,,Front end developer,,4,,,,,,,,
+Dallin Bowie,,Project Designer/ developer,,3,,,,,,,,
+Angle Wheelwright,,Database engineer,,5,Issue,We added part time roles to the front end which extends communications delays and training time for learning the framework,,,,,,
+Jared Wilson,,Back end engineer,,5,,,,,,,,
+Ren Strauss,,Front end developer,,6,,,,,,,,
+Jeremy Payne,,Back end engineer,,5,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+Total,,,,33,,,,,,,,
