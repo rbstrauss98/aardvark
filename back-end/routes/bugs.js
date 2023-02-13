@@ -106,4 +106,31 @@ router.put('/:id', async(req, res) => {
     }
 })
 
+// create comment on bug
+router.post('/:id/comment', async(req, res) => {
+    // check for required fields
+    if (!req.body.text) {
+        return res.status(400).send({
+            message: 'Missing text field in request body.'
+        });
+    }
+
+    try {
+        const postID = Number.parseInt(req.params.id);
+        const post = await models.bug.findByPk(postID);
+        if (!post) {
+            return res.sendStatus(404);
+        }
+        const comment = await post.createComment({
+            text: req.body.text
+        });
+        return res.send({
+            comment: comment
+        });
+    } catch(error) {
+        console.log(error);
+        return res.sendStatus(500);
+    }
+})
+
 module.exports = router;

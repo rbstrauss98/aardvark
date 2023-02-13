@@ -33,3 +33,27 @@
 ### Required body fields
 - `title`
 - `description`
+
+## Create comment
+- `POST` request to `/api/bugs/:id/comment` where ID is the parent bug ID
+- Returns the created comment object if successful
+- Returns with 404 status code if a bug with the given ID could not be found
+
+### Required body fields
+- `text`
+
+# Comment Routes
+
+## Delete comment
+- `DELETE` request to `/api/comments/:id`
+- Returns with 200 status code if the comment with the given ID was deleted
+- Returns with 404 status code if the comment with the given ID couldn't be found
+
+## Update comment
+- `PUT` request to `/api/comments/:id`
+- Returns with 200 status code if the comment with the given ID was successfully updated
+    - This behavior differs from the create comment behavior, which is to return the entire comment. This can be changed to match if necessary, it just requires an extra DB lookup.
+- Returns with 404 status code if the comment with the given ID couldn't be found
+
+### Required body fields
+- `text`

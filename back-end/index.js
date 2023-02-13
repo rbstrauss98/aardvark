@@ -37,6 +37,7 @@ async function init() {
 
     // add routes
     app.use('/api/bugs', require('./routes/bugs'));
+    app.use('/api/comments', require('./routes/comments'));
 
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`)
