@@ -1,3 +1,8 @@
+# Running the back end
+Running `npm start` will start the server. The database will be saved in `aardvark.sqlite` and will persist across shutdowns.
+
+You can also use `npm run dev` which will instead use `aardvark-dev.sqlite` for its database. This database is prepopulated with some test data and will reset on each run.
+
 # Bug Routes
 
 ## Get all bugs

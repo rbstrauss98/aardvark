@@ -1,9 +1,11 @@
 const { Sequelize } = require('sequelize');
 
+dbStorage = process.env.NODE_ENV == 'dev' ? 'aardvark-dev.sqlite' : 'aardvark.sqlite';
+
 // create the connection
 const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: 'aardvark.sqlite'
+    storage: dbStorage
 });
 
 const modelDefiners = [

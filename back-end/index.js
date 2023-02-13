@@ -17,19 +17,11 @@ async function init() {
         process.exit(1);
     }
 
-    // create fresh database and fill with some testing data
-    await sequelize.sync({ force: true });
-    const testBug = await sequelize.models.bug.create({
-        title: 'Test bug',
-        description: 'Hello world!'
-    });
-    await testBug.createComment({
-        text: "Here's one comment.",
-        isSolution: 1
-    });
-    await testBug.createComment({
-        text: "And here's another!"
-    })
+    if (process.env.NODE_ENV == 'dev') {
+        await initDevDB();
+    } else {
+        await sequelize.sync();
+    }
 
     app.use(cors());
     app.use(bodyParser.json());
@@ -42,6 +34,32 @@ async function init() {
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`)
     })
+}
+
+async function initDevDB() {
+    await sequelize.sync({ force: true });
+    const testBug1 = await sequelize.models.bug.create({
+        title: 'Test bug',
+        description: 'Hello world!'
+    });
+    await testBug1.createComment({
+        text: "Here's a comment for the first test bug.",
+    });
+    await testBug1.createComment({
+        text: "And here's another for the first test bug!"
+    });
+    const testBug2 = await sequelize.models.bug.create({
+        title: 'The cooler test bug 😎',
+        description: 'This test bug is so cool that it has a solution.'
+    });
+    await testBug2.createComment({
+        text: "I'm a solution!",
+        isSolution: 1
+    });
+    const testBug3 = await sequelize.models.bug.create({
+        title: 'The lonely test bug 😢',
+        description: 'I have no comments...'
+    });
 }
 
 init();
