@@ -23,8 +23,6 @@ const BugPage = () => {
     fetchBug();
   }, [bugId]);
 
-//   console.log(bug.comments)
-
   return (
     <Container>
       <Row>
