@@ -8,17 +8,14 @@ function BugComponent(props){
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
 
-
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`${apiURL}/api/bugs/`);
             const data = await response.json();
             setData(data);
-            setFilteredData(data);
-            
+            setFilteredData(data);  
         };
-        fetchData();
-        
+        fetchData();    
     }, []);
 
     useEffect(() => {
@@ -40,8 +37,7 @@ function BugComponent(props){
       {filteredData.map(item => (
         <Row xs={12} sm={9} md={12} key={item.id} >
             <Link to={`/bug/${item.id}`}>
-                <Card >
-                <Card.Img variant="left" src={item.image} height="150px" width="150px"/>
+                <Card style={{height: "200px"}} >
                 <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
                     <Card.Text>{item.description}</Card.Text>

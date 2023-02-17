@@ -5,8 +5,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../images/aardvark.png'
 import { Router, Routes, Route, Link } from 'react-router-dom';
+import React, {useState} from "react"
 
 function NavbarComponent(props) {
+  // const [searchValue, setSearchValue] = useState("") //use this and changing Form.Controls value and onchange 
   const handleSubmit = (event) => {
     event.preventDefault();
     props.handleSearch(event);
