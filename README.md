@@ -9,7 +9,7 @@ Aardvark would be a website where a team of software developers can post their b
 Proposed by: Dallin Bowie
 
 ## Organization Chart
-![Org Chart](https://github.com/rbstrauss98/aardvark/blob/main/Org%20Chart%20Aardvark.jpg)
+[Link to Org Chart](https://github.com/rbstrauss98/aardvark/blob/main/Org%20Chart%20Aardvark.jpg)
 
 ## Team Members
 
