@@ -8,9 +8,6 @@ Aardvark would be a website where a team of software developers can post their b
 
 Proposed by: Dallin Bowie
 
-## Organization Chart
-[Link to Org Chart](https://github.com/rbstrauss98/aardvark/blob/main/Org%20Chart%20Aardvark.jpg)
-
 ## Team Members
 
 * Dallin Bowie
@@ -20,6 +17,9 @@ Proposed by: Dallin Bowie
 * Jared Wilson
 * Dallan Adamson
 * Colby Lyman
+
+## Organization Chart
+[Link to Org Chart](https://github.com/rbstrauss98/aardvark/blob/main/Org%20Chart%20Aardvark.jpg)
 
 ## Status Reports
 [StatusReport01](https://github.com/rbstrauss98/aardvark/blob/main/Aardvark%20report%20(1).xlsx)
