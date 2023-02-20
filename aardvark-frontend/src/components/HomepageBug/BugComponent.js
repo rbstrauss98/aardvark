@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import fakeData from "../../fakeData";
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ModalCard from '../Modal/Modal';
+
 
 function BugComponent(){
     const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
@@ -19,6 +21,7 @@ function BugComponent(){
 
     return(
     <Container >
+      <ModalCard></ModalCard>
       <Row className="d-grid gap-3">
         {data.map(item => (
           <Col xs={12} sm={9} md={12} key={item.id}>
