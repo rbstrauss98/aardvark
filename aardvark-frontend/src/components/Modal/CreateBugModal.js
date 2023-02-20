@@ -5,7 +5,7 @@ import { Modal } from 'react-responsive-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function ModalCard() {
+function CreateBugModal() {
   const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
   const [open, setOpen] = useState(false);
 
@@ -66,5 +66,4 @@ function ModalCard() {
   );
 };
 
-export default ModalCard
-// ReactDOM.render(<App />, document.getElementById('app'));
+export default CreateBugModal
