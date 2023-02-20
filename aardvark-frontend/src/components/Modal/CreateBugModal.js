@@ -36,12 +36,20 @@ function CreateBugModal() {
     fetch(`${apiURL}/api/bugs/`, requestOptions)
       .then(response => console.log(response.json()))
 
+    // Close modal (there might be a better way to do this)
+    onCloseModal();
+
+    // Insert call/emit event to parent copmenont (bug compenent) to
+    //    make an api call to the db.
+
   });
 
 
   return (
     <div>
-      <button onClick={onOpenModal}>Create Bug</button>
+      <Button onClick={onOpenModal} variant="outline-success">Create Bug 🐜</Button>{' '}
+      <div class="mb-3"></div> {/* Used for spacing */}
+      {/* <button onClick={onOpenModal}>Create Bug</button> */}
       <Modal open={open} onClose={onCloseModal} center>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicTitle">
@@ -57,7 +65,7 @@ function CreateBugModal() {
               <Form.Control type="text" placeholder="Description" onChange={(event) => setDescription(event.target.value)}/>
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" value="Submit">
               Submit
           </Button>
         </Form>

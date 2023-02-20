@@ -21,7 +21,9 @@ function BugComponent(){
 
     return(
     <Container >
-      <CreateBugModal></CreateBugModal>
+      <div class="d-flex justify-content-end">
+        <CreateBugModal></CreateBugModal>
+      </div>
       <Row className="d-grid gap-3">
         {data.map(item => (
           <Col xs={12} sm={9} md={12} key={item.id}>
