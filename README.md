@@ -34,3 +34,8 @@ Proposed by: Dallin Bowie
 
 ## Gantt Chart
 [Gantt Chart in Google Sheets](https://docs.google.com/spreadsheets/d/1TeNB_ne3lPgpLOUglW823o-0Ad1kB6NOLjJQHQJR85Q/edit?usp=sharing)
+
+## Database Entity Relation Diagrams
+[Database Version 1 ERD](https://github.com/rbstrauss98/aardvark/blob/main/aardvark_v1_ERD.jpg)
+
+[Database Version 2 ERD](https://github.com/rbstrauss98/aardvark/blob/main/aardvark_v2_ERD.jpg)
