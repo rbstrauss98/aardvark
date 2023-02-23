@@ -62,3 +62,13 @@ You can also use `npm run dev` which will instead use `aardvark-dev.sqlite` for 
 
 ### Required body fields
 - `text`
+
+## Mark comment as solution
+- `POST` request to `/api/comments/:id/solve`
+- Returns with 200 status code if the comment with the given ID was successfully updated
+- Returns with 404 status code if the comment with the given ID couldn't be found
+
+## Unmark comment as solution
+- `POST` request to `/api/comments/:id/unsolve`
+- Returns with 200 status code if the comment with the given ID was successfully updated
+- Returns with 404 status code if the comment with the given ID couldn't be found

@@ -1,29 +1,21 @@
 import React, { useState, useEffect } from "react";
-
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
 import { useParams } from 'react-router-dom'
 import AddCommentModal from '../components/Modal/AddCommentModal';
 
-
 const BugPage = () => {
   const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
   const { id } = useParams();
-
-  const bugId = id
-
   const [bug, setBug] = useState({});
 
   useEffect(() => {
     const fetchBug = async () => {
-      const response = await fetch(`${apiURL}/api/bugs/${bugId}`);
+      const response = await fetch(`${apiURL}/api/bugs/${id}`);
       const bug = await response.json();
       setBug(bug);
     };
-
     fetchBug();
-  }, [bugId]);
-
-//   console.log(bug.comments)
+  }, [id]);
 
   return (
     <Container>
