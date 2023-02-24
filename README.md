@@ -39,3 +39,6 @@ Proposed by: Dallin Bowie
 [Database Version 1 ERD](https://github.com/rbstrauss98/aardvark/blob/main/aardvark_v1_ERD.jpg)
 
 [Database Version 2 ERD](https://github.com/rbstrauss98/aardvark/blob/main/aardvark_v2_ERD.jpg)
+
+## Architecture and Design Document
+[Arch and Design Doc](https://docs.google.com/document/d/1awaBj_mNkA5wYFt5KFwKp_HCvkIyx1_NuNK0nFNPRw0/edit?usp=sharing)
