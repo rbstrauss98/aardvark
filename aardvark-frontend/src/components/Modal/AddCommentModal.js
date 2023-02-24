@@ -5,7 +5,10 @@ import { Modal } from 'react-responsive-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function AddCommentModal() {
+//fixme: the comment doesn't appear in the list until refresh
+
+function AddCommentModal(props) {
+
   const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
   const [open, setOpen] = useState(false); 
 
@@ -30,14 +33,14 @@ function AddCommentModal() {
 
 
     // Make api call and log response
-//fixme: hardcoded to work for bug 1
-    fetch(`${apiURL}/api/bugs/1/comment`, requestOptions)
+ //fixme: hardcoded to work for bug 1
+    fetch(`${apiURL}/api/bugs/${props.bugID}/comment`, requestOptions)
       .then(response => console.log(response.json()))
 
   });
 
 
-//fixme: how to make the width bigger??
+ //fixme: how to make the width bigger??
 
   return (
     <div>

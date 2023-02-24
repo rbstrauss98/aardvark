@@ -24,7 +24,7 @@ const BugPage = () => {
           <h1>{bug.title}</h1>
           <p>{bug.description}</p>
           <img src={bug.image} alt={bug.title} />
-          <AddCommentModal></AddCommentModal>
+          <AddCommentModal bugID={bug.id}></AddCommentModal>
         </Col>
         {bug.comments && bug.comments.map(comment => (
             <Col xs={12} key={comment.text}>
