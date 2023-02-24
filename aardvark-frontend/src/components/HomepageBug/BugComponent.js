@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import fakeData from "../../fakeData";
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CreateBugModal from '../Modal/CreateBugModal';
+
 
 function BugComponent(props){
     const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
@@ -32,6 +34,9 @@ function BugComponent(props){
     
     return(
     <Container >
+      <div class="d-flex justify-content-end">
+        <CreateBugModal></CreateBugModal>
+      </div>
       <Col className="d-grid gap-3" style={{height: "550px",overflowY: "scroll"}}>
         
       {filteredData.map(item => (
