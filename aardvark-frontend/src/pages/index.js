@@ -2,11 +2,11 @@ import React from 'react';
 import fakeData from '../fakeData';
 import BugComponent from '../components/HomepageBug/BugComponent';
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div>
       <h1>Welcome to Aardvark</h1>
-      <BugComponent/>
+      <BugComponent searchQuery = {props.searchQuery}/>
     </div>
   );
 };
