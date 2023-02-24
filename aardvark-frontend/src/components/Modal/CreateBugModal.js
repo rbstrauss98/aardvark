@@ -20,8 +20,8 @@ function CreateBugModal() {
   // Used on form submission
   const handleSubmit = ((event) => {
     event.preventDefault();
-    console.log("Title: " + title)
-    console.log("Description: " + description)
+    console.log("Title: " + title);
+    console.log("Description: " + description);
 
 
     // Create request object
@@ -41,6 +41,7 @@ function CreateBugModal() {
 
     // Insert call/emit event to parent copmenont (bug compenent) to
     //    make an api call to the db.
+    // use effect
 
   });
 
