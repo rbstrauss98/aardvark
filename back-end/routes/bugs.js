@@ -56,6 +56,11 @@ router.post('/', async(req, res) => {
             id: bug.id
         });
     } catch(error) {
+        if (error.name == 'SequelizeUniqueConstraintError') {
+            return res.status(403).send({
+                message: 'A bug with that title already exists.'
+            });
+        }
         console.log(error);
         return res.sendStatus(500);
     }
