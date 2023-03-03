@@ -26,6 +26,7 @@ async function init() {
     app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: false}));
+    app.use(fileUpload());
 
     // add routes
     app.use('/api/bugs', require('./routes/bugs'));

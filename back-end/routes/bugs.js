@@ -1,5 +1,6 @@
 const { models } = require('../sequelize');
 const express = require('express');
+const fileUpload = require('express-fileupload');
 
 const router = express.Router();
 
@@ -45,6 +46,13 @@ router.post('/', async(req, res) => {
             title: req.body.title,
             description: req.body.description
         });
+        // an image can optionally be provided at creation
+        if (req.files && req.files.image) {
+            // req.files.(name of input field) - TODO: Check with front end on input field name
+            let image = req.files.image;
+            bug.image = image.data;
+            await bug.save();
+        }
         // a solution comment can optionally be provided at creation
         if (req.body.solution) {
             await bug.createComment({
