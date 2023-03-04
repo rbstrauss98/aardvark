@@ -32,7 +32,6 @@ function EditBugModal(props) {
 		return;
 	}
 
-	props.updateBug(title, description);
 
     console.log("Title: " + title);
     console.log("Description: " + description);
@@ -49,6 +48,9 @@ function EditBugModal(props) {
     // Make api call and log response
     fetch(`${apiURL}/api/bugs/${props.bugID}`, requestOptions)
       .then(response => console.log(response.text()))
+
+	//fix me check if the call was successful before doing this:
+	props.updateBug(title, description);
 
     // Close modal (there might be a better way to do this)
     onCloseModal();
