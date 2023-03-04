@@ -17,8 +17,8 @@ const BugPage = () => {
     });
   }
 
-  function deleteBug(){
-    //delete the bug
+  function deleteBug(event){
+    //this does successfully delete the bug
     const requestOptions = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
@@ -28,8 +28,8 @@ const BugPage = () => {
     fetch(`${apiURL}/api/bugs/${bug.id}`, requestOptions)
       .then(response => console.log(response.text()))
 
-    //once bug is deleted, we need to return back to home page
-    //fixme: this works, but is it good practice??
+    //once bug is deleted, we need to route back to home page
+    //fixme: is this good practice?
     window.location.href = "http://localhost:3000/";
 
   }
@@ -59,7 +59,7 @@ const BugPage = () => {
           <p>{bug.description}</p>
           <img src={bug.image} alt={bug.title} />
           <EditBugModal title={bug.title} description={bug.description} bugID={bug.id} updateBug={updateBug}></EditBugModal>
-          <button onClick={deleteBug()}>Delete bug</button>
+          <button onClick={(event) => deleteBug(event)}>Delete bug</button>
           <AddCommentModal bugID={bug.id} addComment={addComment}></AddCommentModal>
         </Col>
         {bug.comments && bug.comments.map(comment => (
