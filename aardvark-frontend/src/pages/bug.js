@@ -17,6 +17,23 @@ const BugPage = () => {
     });
   }
 
+  function deleteBug(){
+    //delete the bug
+    const requestOptions = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    };
+
+    // Make api call and log response
+    fetch(`${apiURL}/api/bugs/${bug.id}`, requestOptions)
+      .then(response => console.log(response.text()))
+
+    //once bug is deleted, we need to return back to home page
+    //fixme: this works, but is it good practice??
+    window.location.href = "http://localhost:3000/";
+
+  }
+
   function addComment(newComment){ //pass in the new comment as an object
     setBug({
       ...bug,
@@ -42,6 +59,7 @@ const BugPage = () => {
           <p>{bug.description}</p>
           <img src={bug.image} alt={bug.title} />
           <EditBugModal title={bug.title} description={bug.description} bugID={bug.id} updateBug={updateBug}></EditBugModal>
+          <button onClick={deleteBug()}>Delete bug</button>
           <AddCommentModal bugID={bug.id} addComment={addComment}></AddCommentModal>
         </Col>
         {bug.comments && bug.comments.map(comment => (
