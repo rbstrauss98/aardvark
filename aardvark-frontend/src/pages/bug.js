@@ -9,11 +9,19 @@ const BugPage = () => {
   const { id } = useParams();
   const [bug, setBug] = useState({});
 
-  function handleTitleDescriptionChange(newTitle, newDescription) {
+  function updateBug(newTitle, newDescription) {
     setBug({
       ...bug,
       title: newTitle, 
       description: newDescription
+    });
+  }
+
+  function addComment(newComment){ //pass in the new comment as an object
+    setBug({
+      ...bug,
+      comments: [...bug.comments, newComment]
+      
     });
   }
 
@@ -22,7 +30,6 @@ const BugPage = () => {
       const response = await fetch(`${apiURL}/api/bugs/${id}`);
       const bug = await response.json();
       setBug(bug);
-      console.log(bug)
     };
     fetchBug();
   }, [id]);
@@ -34,8 +41,8 @@ const BugPage = () => {
           <h1>{bug.title}</h1>
           <p>{bug.description}</p>
           <img src={bug.image} alt={bug.title} />
-          <EditBugModal title={bug.title} description={bug.description} bugID={bug.id} updateBug={handleTitleDescriptionChange}></EditBugModal>
-          <AddCommentModal bugID={bug.id}></AddCommentModal>
+          <EditBugModal title={bug.title} description={bug.description} bugID={bug.id} updateBug={updateBug}></EditBugModal>
+          <AddCommentModal bugID={bug.id} addComment={addComment}></AddCommentModal>
         </Col>
         {bug.comments && bug.comments.map(comment => (
             <Col xs={12} key={comment.text}>

@@ -33,10 +33,22 @@ function AddCommentModal(props) {
 
 
     // Make api call and log response
- //fixme: hardcoded to work for bug 1
     fetch(`${apiURL}/api/bugs/${props.bugID}/comment`, requestOptions)
       .then(response => console.log(response.json()))
 
+      //fixme: how to get the new comment? it's in the promiseResult!
+
+      //fixme: this works bc title is the only thing we're displaying, but
+          //make this not hardcoded:
+      let newComment = {
+        "id": 99,
+        "text": title,
+        "isSolution": 0,
+        "createdAt": "2023-02-13T23:21:46.109Z",
+        "updatedAt": "2023-02-13T23:21:46.109Z",
+        "bugId": 1
+      }
+      props.addComment(newComment);
   });
 
 
