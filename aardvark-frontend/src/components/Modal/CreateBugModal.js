@@ -43,6 +43,8 @@ function CreateBugModal() {
     //    make an api call to the db.
     // use effect
 
+    //fixme: rerender the whole page, this is a temp. hacky fix:
+    window.location.reload();
   });
 
 
