@@ -42,3 +42,6 @@ Proposed by: Dallin Bowie
 
 ## Architecture and Design Document
 [Arch and Design Doc](https://docs.google.com/document/d/1awaBj_mNkA5wYFt5KFwKp_HCvkIyx1_NuNK0nFNPRw0/edit?usp=sharing)
+
+## Testing Plan
+[Testing Plan Doc](https://docs.google.com/document/d/1nbqDxVlO3cZvRqXPk7sKTStOuDrac5AYs0ODWOsz0Q4/edit)
