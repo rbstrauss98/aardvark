@@ -49,6 +49,7 @@ function AddCommentModal(props) {
         "bugId": 1
       }
       props.addComment(newComment);
+      onCloseModal();
   });
 
 
