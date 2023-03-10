@@ -33,9 +33,16 @@ function AddCommentModal(props) {
 
 
     // Make api call and log response
- //fixme: hardcoded to work for bug 1
     fetch(`${apiURL}/api/bugs/${props.bugID}/comment`, requestOptions)
-      .then(response => console.log(response.json()))
+      .then(response => {
+        response = response.json()
+        response.then((result)=>{
+          console.log(result.comment)
+          props.addComment(result.comment)
+          onCloseModal()
+        })
+      })
+
 
   });
 
@@ -44,7 +51,7 @@ function AddCommentModal(props) {
 
   return (
     <div>
-      <button onClick={onOpenModal}>Add Comment</button>
+      <Button className="mb-2" onClick={onOpenModal}>Add Comment</Button>
       <Modal open={open} onClose={onCloseModal} center>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicTitle">
