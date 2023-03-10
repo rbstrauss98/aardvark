@@ -34,22 +34,16 @@ function AddCommentModal(props) {
 
     // Make api call and log response
     fetch(`${apiURL}/api/bugs/${props.bugID}/comment`, requestOptions)
-      .then(response => console.log(response.json()))
+      .then(response => {
+        response = response.json()
+        response.then((result)=>{
+          console.log(result.comment)
+          props.addComment(result.comment)
+          onCloseModal()
+        })
+      })
 
-      //fixme: how to get the new comment? it's in the promiseResult!
 
-      //fixme: this works bc title is the only thing we're displaying, but
-          //make this not hardcoded:
-      let newComment = {
-        "id": 99,
-        "text": title,
-        "isSolution": 0,
-        "createdAt": "2023-02-13T23:21:46.109Z",
-        "updatedAt": "2023-02-13T23:21:46.109Z",
-        "bugId": 1
-      }
-      props.addComment(newComment);
-      onCloseModal();
   });
 
 
@@ -57,7 +51,7 @@ function AddCommentModal(props) {
 
   return (
     <div>
-      <button onClick={onOpenModal}>Add Comment</button>
+      <Button className="mb-2" onClick={onOpenModal}>Add Comment</Button>
       <Modal open={open} onClose={onCloseModal} center>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicTitle">

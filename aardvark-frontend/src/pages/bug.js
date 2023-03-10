@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Image } from "react-bootstrap";
 import { useParams } from 'react-router-dom'
 import AddCommentModal from '../components/Modal/AddCommentModal';
 import EditBugModal from '../components/Modal/EditBugModal';
+import Button from 'react-bootstrap/Button';
 
 const BugPage = () => {
   const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
@@ -59,7 +60,7 @@ const BugPage = () => {
           <p>{bug.description}</p>
           <img src={bug.image} alt={bug.title} />
           <EditBugModal title={bug.title} description={bug.description} bugID={bug.id} updateBug={updateBug}></EditBugModal>
-          <button onClick={(event) => deleteBug(event)}>Delete bug</button>
+          <Button className="mb-3" onClick={(event) => deleteBug(event)}>Delete bug</Button>
           <AddCommentModal bugID={bug.id} addComment={addComment}></AddCommentModal>
         </Col>
         {bug.comments && bug.comments.map(comment => (
