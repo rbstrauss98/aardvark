@@ -51,7 +51,6 @@ function CreateBugModal() {
   return (
     <div>
       <Button onClick={onOpenModal} variant="outline-success">Create Bug 🐜</Button>{' '}
-      <div className="mb-3"></div> {/* Used for spacing */}
       {/* <button onClick={onOpenModal}>Create Bug</button> */}
       <Modal open={open} onClose={onCloseModal} center>
         <Form onSubmit={handleSubmit}>

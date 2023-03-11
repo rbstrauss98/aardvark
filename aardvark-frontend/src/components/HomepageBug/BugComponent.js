@@ -34,14 +34,19 @@ function BugComponent(props){
     
     return(
     <Container >
-      <div class="d-flex justify-content-end">
-        <CreateBugModal></CreateBugModal>
-      </div>
-      <Col className="d-grid gap-3" style={{height: "550px",overflowY: "scroll"}}>
+      <Row className="my-5">
+        <Col>
+          <h1>Bugs</h1>
+        </Col>
+        <Col className="align-self-center" style={{textAlign: "right"}} xs="auto">
+          <CreateBugModal></CreateBugModal>
+        </Col>
+      </Row>
+      <Row className="d-grid gap-3">
         
       {filteredData.map(item => (
-        <Row xs={12} sm={9} md={12} key={item.id} >
-            <Link to={`/bug/${item.id}`}>
+        <Col md={{ span: 10, offset: 1 }} lg={{ span: 8, offset: 2 }} xl={{ span: 6, offset: 3 }} key={item.id} >
+            <Link to={`/bug/${item.id}`} style={{textDecoration: "none", color: "inherit"}}>
                 <Card style={{height: "200px"}} >
                 <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
@@ -49,9 +54,9 @@ function BugComponent(props){
                 </Card.Body>
                 </Card>
             </Link>
-        </Row>
+        </Col>
         ))}
-      </Col>
+      </Row>
 
     </Container>
     )
