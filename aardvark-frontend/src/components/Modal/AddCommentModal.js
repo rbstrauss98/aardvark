@@ -5,7 +5,6 @@ import { Modal } from 'react-responsive-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-//fixme: the comment doesn't appear in the list until refresh
 
 function AddCommentModal(props) {
 

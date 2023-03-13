@@ -30,7 +30,12 @@ function BugComponent(props){
         setFilteredData(filtered);
       }
     }, [props.searchQuery, data]);
-    
+
+    function addBug(newBug){
+      setFilteredData(
+        [...filteredData, newBug]
+      );
+    }
     
     return(
     <Container >
@@ -39,10 +44,10 @@ function BugComponent(props){
           <h1>Bugs</h1>
         </Col>
         <Col className="align-self-center" style={{textAlign: "right"}} xs="auto">
-          <CreateBugModal></CreateBugModal>
+          <CreateBugModal addBug={addBug}></CreateBugModal>
         </Col>
       </Row>
-      <Row className="d-grid gap-3">
+      <Row className="d-grid gap-3 mb-4">
         
       {filteredData.map(item => (
         <Col md={{ span: 10, offset: 1 }} lg={{ span: 8, offset: 2 }} xl={{ span: 6, offset: 3 }} key={item.id} >
