@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../../images/aardvark.png'
+import logo from '../../images/aardvark-transparent.png'
 import { Router, Routes, Route, Link } from 'react-router-dom';
 import React, {useState} from "react"
 
@@ -17,7 +17,7 @@ function NavbarComponent(props) {
   return (
       <Navbar bg="dark" variant={"dark"} expand="lg">
         <Container>
-          <Navbar.Brand><img src={logo} width="140" height="80"/></Navbar.Brand>
+          <Navbar.Brand><Nav.Link as={Link} to={"/"}><img src={logo} alt="Aardvark logo" width="140" height="80"/></Nav.Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-5">
@@ -33,7 +33,7 @@ function NavbarComponent(props) {
                 value={props.searchQuery}
                 onChange={(event) => props.setSearchQuery(event.target.value)}
               />
-              <Button variant="outline-success" type="submit">Search</Button>
+              <Button variant="primary" type="submit">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

@@ -51,7 +51,7 @@ function AddCommentModal(props) {
 
   return (
     <div>
-      <Button className="mb-2" onClick={onOpenModal}>Add Comment</Button>
+      <Button onClick={onOpenModal}>Add Comment</Button>
       <Modal open={open} onClose={onCloseModal} center>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicTitle">

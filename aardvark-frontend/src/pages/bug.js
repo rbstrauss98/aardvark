@@ -54,15 +54,21 @@ const BugPage = () => {
 
   return (
     <Container>
-      <Row>
-        <Col xs={12}>
-          <h1>{bug.title}</h1>
-          <p>{bug.description}</p>
-          <img src={bug.image} alt={bug.title} />
+      <h1 className="my-4">{bug.title}</h1>
+      <p>{bug.description}</p>
+      <img src={bug.image} alt={bug.title} />
+      <Row className="my-3">
+        <Col xs="auto">
           <EditBugModal title={bug.title} description={bug.description} bugID={bug.id} updateBug={updateBug}></EditBugModal>
-          <Button className="mb-3" onClick={(event) => deleteBug(event)}>Delete bug</Button>
+        </Col>
+        <Col xs="auto">
+          <Button variant="outline-danger" onClick={(event) => deleteBug(event)}>Delete bug</Button>
+        </Col>
+        <Col style={{textAlign: "right"}}>
           <AddCommentModal bugID={bug.id} addComment={addComment}></AddCommentModal>
         </Col>
+      </Row>
+      <Row>
         {bug.comments && bug.comments.map(comment => (
             <Col xs={12} key={comment.text}>
             {comment.isSolution ? (
