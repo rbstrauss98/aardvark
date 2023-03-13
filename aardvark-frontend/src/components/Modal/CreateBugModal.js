@@ -5,7 +5,7 @@ import { Modal } from 'react-responsive-modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function CreateBugModal() {
+function CreateBugModal(props) {
   const apiURL = process.env.REACT_APP_LOCAL_API_URL //use for developing
   const [open, setOpen] = useState(false);
 
@@ -34,17 +34,15 @@ function CreateBugModal() {
 
     // Make api call and log response
     fetch(`${apiURL}/api/bugs/`, requestOptions)
-      .then(response => console.log(response.json()))
+      .then(response => {
+        response = response.json()
+        response.then((result)=>{
+          console.log(result)
+          props.addBug(result)
+          onCloseModal()
+        })
+      })
 
-    // Close modal (there might be a better way to do this)
-    onCloseModal();
-
-    // Insert call/emit event to parent copmenont (bug compenent) to
-    //    make an api call to the db.
-    // use effect
-
-    //fixme: rerender the whole page, this is a temp. hacky fix:
-    window.location.reload();
   });
 
 
